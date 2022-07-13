@@ -1,0 +1,30 @@
+*{
+ padding: 0;
+margin: 0;
+}
+
+.nav{
+    list-style: none;
+    display: flex;
+}
+
+.nav >li{
+    padding: 10px;
+    margin: 10px;
+    margin-left: 140px;
+    border: 2px solid black;
+}
+
+.nav1 li{
+    display: none;
+}
+
+.nav li:hover .nav1>li{
+    display: inline;
+
+}
+
+.nav .l2 .nav1>li{
+    padding: 0;
+    display: flex;
+}
