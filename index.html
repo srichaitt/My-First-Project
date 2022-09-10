@@ -1,43 +1,215 @@
-<html>
-    <head>
-        <title>L@Zy Pan|>a@</title>
-        <link rel="stylesheet" href="web.css"> <link rel="icon" href="icon1.png"> 
-        
-    </head>
-    
-    <body>
-        <div class="one">
-            <a href="web.html" class="a1"><img src="icon1.png" alt="panda" width="60" height="60">
-            </a>
-            <h3 class="head1">Lazy P@nda</h3>
-            <h1 style="text-align: center" class="head2"> Sri Chaitanya Madhav</h1>
-        </div> 
-        
-        <div class="two">
-            <ul class="uone">
-                <li class="lone" id="east1"><a href="web.html"><img src="home.png" alt="#" width="40" height="40"></a></li>
-                <li class="lone" id="east1"><a href="#"><img src="exam.png" alt="#" width="40" height="40"></a>
-                <ul class="utwo">
-                    <li class="ltwo"><a href="main.html" target="frame1">LOGIN</a></li>
-                    <li class="ltwo"><a href="panda.html" target="frame1">REGISTER</a></li>
-                </ul>
-                </li>
-                <li class="lone" id="east1"><a href="#"><img src="branch.png" alt="#" width="40" height="40"></a>
-                <ul class="uthree">
-                    <li class="lthree">CSE</li>
-                    <ul class="pos">
-                        <li class="lfour">LOGIN</li>
-                        <li class="lfour">SIGN-UP</li>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>L@Zy-Pand^^</title>
+    <meta name="viewport" content=" width=device-width,initil-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="sir_page.css"  >
+        </head>
+        <body >
+          <nav >
+            <!-- LOGO -->
+            <div style="background-color: aqua;"><img src="pic1.jpg" alt="" width="70px" height="70px" style="margin-left:70px; border-radius:50px;" title="KanyaKumari">
+               <span style="font-size: 40px;margin-left: 450px;">RGUKT</span>
+            <a href="#"  style="float: right;margin-top:20px;width:50px;" onclick="Func();"><i class="fa fa-bars fa-2x"></i></a>
+            <hr>
+            </div>
+        </nav >
+            <!-- NAVIGATION MENU -->
+            <nav class="navbar">
+            <ul class="nav-links">
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+            <div class="menu" >
+            <li style="margin-left: 150px;"><a href="sir_givenPage.html"><i class="fa fa-fw fa-home"></i>Home</a></li>
+            <li class="dropdownn_box"><a href=""><i class='fa fa-book'></i>Exam</a>
+                <div class="subb">
+                    <ul class="subexam">
+                        <li ><a href="Sat_due_bySir.html" onclick="regi();" id="reg" style="visibility: visible;">Register</a></li>
+                        <li><a href="">Login</a></li>
                     </ul>
-                    <li class="lthree">ECE</li>
-                    <li class="lthree">MECH</li>
-                </ul>
-                </li>
-                <li class="lone" id="east1"><a href="#"><img src="contact.png" alt="#" width="40" height="40"></a></li>
+                </div>
+          </li>
+            <div>
+                <li class="ItemsMenu"><a href=""><i class="fa fa-users"></i>Branch</a>
+                <div class="dropdown_box">
+                    <ul>
+                        <li class="cse_style">
+                            <a href="">CSE</a>
+                            <div class="mini_dropbox">
+                                <ul>
+                                    <li><a href="student_login.html">STUDENTS</a></li>
+                                    <li><a hrfe="">FACULTY</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                       
+                        <li><a href="">ECE</a></li>
+                        <LI><a href="">MECH</a></LI>
+                    </ul>
+                </div>
+            </div>
+            <li ><a href="#" onclick="contactlink();"><i class="fa fa-phone"></i>contact</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-search"></i>Search</a></li>
+            </div>
             </ul>
-        </div>
-        <div>
-            <iframe src="home.html" frameborder="20" width="100%" height="450px" name="frame1"></iframe>
-        </div>
-    </body>
-</html>
+            </nav>
+            <div id="main">
+                <div id="sidebar1" >
+                    <h1 style="text-align: center;font-style: italic;"><u>ID Numbers List</u></h1>
+                    <div style="width: 30pxpx;text-align:center;">
+                    <input type="text" name="" id="search" onkeyup="searching();" placeholder="search what you want..?" style="width: 200px;" >
+    
+                    <ul style="text-align: center;padding-top: 50px;overflow: scroll;height: 430px;" id="myUL">
+                        <li><a href="#">N180001</a></li><br>
+                        <li><a href="#">N180002</a></li><br>  
+                        <li><a href="#">N180003</a></li><br>
+                        <li><a href="#">N180004</a></li><br>
+                        <li><a href="#">N180005</a></li><br>
+                        <li><a href="#">N180006</a></li><br>
+                        <li><a href="#">N180007</a></li><br>
+                        <li><a href="#">N180008</a></li><br>
+                        <li><a href="#">N180009</a></li><br>
+                        <li><a href="#">N180010</a></li><br>
+                        <li><a href="#">N180011</a></li><br>
+                        <li><a href="#">N180012</a></li><br>
+                        <li><a href="#">N180013</a></li><br>
+                        <li><a href="#">N180014</a></li><br>
+                        <li><a href="#">N180131</a></li><br>
+                        <li><a href="#">N180321</a></li><br>
+                        <li><a href="#">N180421</a></li><br>
+                        <li><a href="#">N180541</a></li><br>
+                        <li><a href="#">N180531</a></li><br>
+                        <li><a href="#">N180431</a></li><br>
+                        <li><a href="#">N180341</a></li><br>
+                        <li><a href="#">N180551</a></li><br>
+                        <li><a href="#">N180761</a></li><br>
+                        <li><a href="#">N180351</a></li><br>
+                        <li><a href="#">N180343</a></li><br>
+                        <li><a href="#">N180383</a></li><br>  
+                        <li><a href="#">N180343</a></li><br>
+                        <li><a href="#">N180399</a></li><br>
+                        <li><a href="#">N181103</a></li><br>
+                        <li><a href="#">N180973</a></li><br>
+                        <li><a href="#">N180024</a></li><br>
+
+                    </ul>
+                </div>
+                </div>
+                <div id="sidebar2">
+                    <h1 style="text-align: center;background-color:rgb(0, 195, 255)"><u>Notifications</u></h1>
+                    <p style="align-items: center;">
+                        <marquee behavior="alternate" direction="down" height="450px" scrollamount="10" onmouseover="this.stop();" onmouseout="this.start();">1.<a href="AP RGUKT IIIT Selected list 2022 Counselling Dates for Certificate Verification">Selected List</a> <br><br>
+                            2. <a href="Telangana TET Notification 2022, TS TET Online Application 2022 at tstet.cgg.gov.in">TS TET Online Application 2022</a><br><br>
+                            3.<a href="AP SET Notification 2022, APSET Online Application 2022 at apset.org">APSET Online Application 2022</a><br><br>
+                            4.<a href="Download Detailed Notification for AP RGUKT Admissions 2022">Download Detailed Notification for AP RGUKT Admissions 2022</a><br><br>
+                            5. <a href="Telangana TET Notification 2022, TS TET Online Application 2022 at tstet.cgg.gov.in">TS TET Online Application 2022</a><br><br>
+                            6. <a href="AP RGUKT IIIT Selected list 2022 Counselling Dates for Certificate Verification">selected list 2022 counselling Dates</a><br><br>
+                            7. <a href="AP SET Notification 2022, APSET Online Application 2022 at apset.org">AP SET Online Application 2022</a><br><br>
+                            8. <a href="http://admissions.rguktn.ac.in">Official Website</a><br><br>
+                            9. <a href=" http://admissions.rguktn.ac.in/ugadmissions/">More details</a><br><br></marquee>
+                    </p>
+                </div>
+                <div id="column1">
+                   <iframe src="slideshow.html" width="100%" height="490px"frameborder="yes"></iframe>
+            </div>
+            </div>
+            <div id="contact" style="height: 500;width: 100%;">
+                <div id="tabledivision">
+                    <h1 style="text-align:center;margin-top: 100px;">Details</h1>
+                <table border="1" >
+                    <tr>
+                        <td>Name</td>
+                        <td>KanyaKumari Amireddy</td>
+                    </tr>
+                    <tr>
+                        <td>ID</td>
+                        <td>N181103</td>
+                    </tr>
+                    <tr>
+                        <td>Year of study</td>
+                        <td>Engineering 2<sup>nd</sup>Year</td>
+                    </tr>
+                    <tr>
+                        <td> District</td>
+                        <td>Krishna</td>
+                    </tr>
+                    <tr>
+                        <td>Phone number</td>
+                        <td>87903672090</td>
+                    </tr>
+                </table>
+            </div>
+                <div class="map" id="mapp" >
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3819.6778985673013!2d80.82442855000001!3d16.792693349999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3675e5f312c661%3A0xab7189f421622491!2sIIIT%20Nuzvid%20Campus%2C%20Nuzividu%2C%20Andhra%20Pradesh%20521202!5e0!3m2!1sen!2sin!4v1657872865679!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+           
+            <ul id="mySidenav" class="sidenav">
+                <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="background-color:transparent;">&times;</a></li>
+                <li><a href="#"><i class="fa fa-home"></i></a></li>
+                <li><a href="#">Exam</a>
+                <ul>
+                    <li>
+                        <a href="#">Register</a>
+                    </li>
+                    <li><a href="#">Login</a></li>
+                </ul></li>
+                <li><a href="#">Branch</a>
+                    <ul>
+                    <li>
+                        <a href="">CSE</a>
+                        <ul>
+                        <li><a href="">Faculty</a></li>
+                        <li><a href="#">Student</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">ECE</a></li>
+                    <li><a href="">MECH</a></li>
+                    </ul>
+                </li>
+                <li><a href=""><i class="fa fa-phone"></i></a></li>
+            </ul>
+            <footer>
+            <p class="text-footer" style="background-color: teal;">
+            Copyright ©-All rights are reserved
+            <a href="https://www.hitwebcounter.com" target="_blank">
+                <img src="https://hitwebcounter.com/counter/counter.php?page=8012607&style=0016&nbdigits=6&type=page&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a> 
+            </p>
+            </footer>
+            <script>
+        function Func(){
+            //document.getElementById("navg").style.display="none";
+            document.getElementById("mySidenav").style.width = "280px";
+            
+        }
+        function closeNav() {
+            var x = screen.width;
+            document.getElementById("mySidenav").style.width = "0";
+        }
+        function searching(){
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('search');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName('li');
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+                }
+                else {
+                li[i].style.display = "none";
+                }
+            }
+        }
+        function contactlink(){
+            // alert("Dsgvsd")
+            document.getElementById("main").style.display="none";
+            document.getElementById("contact").style.display="inline";
+            document.getElementById("mapp").style.display="block"
+        }
+            </script>
+            </body>
+            </html>
