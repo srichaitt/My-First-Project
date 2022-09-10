@@ -1,0 +1,301 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-image: linear-gradient(to bottom right, yellow, skyblue);
+            background-attachment: scroll;
+            background-size: auto;
+        }
+        table{
+            width: 90%;
+        }
+        td{
+            font-size: 30px;
+            font-style: oblique;
+            font-weight: 400;
+        }
+        .warn{
+			color:red;
+			visibility: hidden;
+            font-size: 20px;
+        }
+		input[type=submit],input[type="reset"]{
+			background-color:blue ;
+			border: 1px solid;
+            color: white;
+			width: 140px;
+			height: 40px;
+			margin-left: 170px;
+			margin-top: 30px;
+            font-size: 20px;
+		}
+    </style>
+</head>
+<body>
+    <center><div>
+        <form  action="/jk.php" method="post" onsubmit="return validate();">
+        <table style="text-align:center;">
+            <h1>Registration Form</h1>
+             <tr><td><b>First Name:</b></td><td><input type="text"  id="first" placeholder="enter your first name" style="font-size: 20px;" onchange="return Name(this.id,'errorFN');"></td>
+                <td><label class="warn" id="errorFN" style="visibility: hidden;">*Invalid name!!</label></td></tr>
+             <tr><td><b>Last Name:</b></td><td><input type="text" id="last" placeholder="enter your last name" style="font-size: 20px;" onchange="return Name(this.id,'errorLN');"></td>
+                <td><label id="errorLN" style="color:red;visibility: hidden;">!!invalid name</label></td></td></tr>
+             <tr><td><b>Middle Name:</b></td><td><input type="text" id="middle" placeholder="enter your middle name" style="font-size: 20px;" onchange="return Mname();"></td>
+                <td><label class="warn" id="errorMN">Invalid name!!</label></td></td></tr>
+             <tr><td><b>Full name:</b></td><td><input type="text" id="full" onfocus="fullname()" readonly style="font-size: 20px;"></td>
+               </td></tr>
+             <tr><td><b>Email:</b></td><td><input type="text"  id="email" placeholder="enter email address" style="font-size: 20px;" onchange="return Mail();"></td>
+                <td><label class="warn" id="errorMAIL" style="visibility:hidden;">Invalid email address...!!</label></td></td></tr>
+            <tr><td>Password</td><td><input type="password" id="ps" style="font-size: 20px;" placeholder="enter your password" onchange="return Password();" minlength="8"></td>
+                <td><label class="warn" id="errorPASS" style="visibility:hidden;">Invalid password it must contain capital letters and small letters and one digit and special character! !</label></td></td></tr> 
+            <tr><td>Show Password:</td><td><input type="checkbox" id="s" onclick="sp();" style="font-size:20px"></td>
+                </td></tr>
+            <tr><td>Country:</td><td><select id="country" style="margin-left:20px;width: 100px;border-radius: 5px;">
+                <option value="Select">Select</option>
+                <option value="USA">USA</option>
+                <option value="Ind">India</option>
+            </select></td>
+                </td></tr>
+            <tr><td>MobileNumber:</td><td><input type="text" name="h" id="call"  placeholder="enter your phone number" style="font-size: 20px;" onchange="return Mobile();"></td>
+                </td>
+                <td><label class="warn" id="errorPH" style="visibility:hidden;">*Invalid Phone Number</label></td>
+            </tr>
+            <tr><td><b>Hobbies:</b></td><td>Sports<input type="checkbox" id="h1">Reading Books<input type="checkbox" id="h2">Sleep<input type="checkbox" id="h3"></td>
+               </td>
+               <td><label id="errorHB" class="warn" style="visibility:hidden;">*Plz select Min 2 hobbies</label></td>
+            </tr>
+            <tr><td><b>Select pic:</b></td><td><input type="file" accept=".png, .jpg, .jpeg"  width="200px" height="230px" ></td>
+               </td></tr>
+            <tr><td>Date of birth:</td><td><input type="date" id="birthday" name="birthday"></td>
+               </td></tr>
+            <tr><td>Age:</td><td><input type="text" id="age" onfocus="getAge()"></td>
+               </td></tr>
+            <tr><td>Address:</td><td> <textarea style="margin-left:40px;" id="address" cols="20" rows="5" onkeyup="Address();"></textarea></td>
+            <td><textarea style="margin-left: 100px;" id="nonumaddress" cols="20" rows="5"></textarea>
+            
+               </td></tr>
+            <tr><td><input type="checkbox" id="accept" > I agree to the terms of the company</td>
+               </td>
+               <td id="errorA" class="warn" style="visibility:hidden;">*Plz accept the terms and conditions..</td>
+           </tr>
+            <tr><td><input type="reset" value="Reset" onclick="reet();"></td>
+            <td></td><td><input type="submit" id="sub" value="Register" onclick="confom();"></td></tr>
+           
+            </tr>
+        </table>
+    </div>
+    </form>     
+    </center>
+     <script type="text/javascript">
+        function validate(){
+            if(Name("first","errorFN") && Name("last","errorLN") && Mname() && Mail() && Password() && Mobile() && Hobby() && Accept()){
+                return true;
+            }
+            else{
+                if(!Name("first","errorFN")){
+                    Name("first","errorFN");
+                }
+                if(!Name("last","errorLN")){
+                    Name("last","errorLN");
+                }
+                if(!Mname()){
+                    Mname();
+                }
+                if(!Mail()){
+                    Mail();
+                }
+                if(!Password()){
+                    Password();
+                }
+                if(!Mobile()){
+                    Mobile();
+                }
+                if(!Hobby()){
+                    Hobby();
+                }
+                if(!Accept()){
+                    Accept();
+                }
+                return false;
+            }
+            
+        }
+        function Name(idname,errorname){
+            var f = document.getElementById(idname).value;
+            if(!(/^[a-zA-Z]+$/.test(f))|| f.length<=3){
+                document.getElementById(errorname).style.visibility="visible";
+                document.getElementById(idname).style.border="2px solid red";
+                return false;
+            }
+            else if(f==""){
+                return false;
+            }
+            else{
+                document.getElementById(errorname).style.visibility="hidden";
+                document.getElementById(idname).style.border="1px solid";
+                return true;
+            }
+        }
+        function Mname(){
+            var f = document.getElementById("middle").value;
+            if(!(/^[a-zA-Z]+$/.test(f))){
+                document.getElementById("errorMN").style.visibility="visible";
+                document.getElementById("middle").style.border="2px solid red";
+                return false;
+            }
+            else if(f==""){
+                return false;
+            }
+            else{
+                document.getElementById("errorMN").style.visibility="hidden";
+                document.getElementById("middle").style.border="1px solid";
+                return true;
+            }
+        }
+        function fullname(){
+            var fn=document.getElementById("first").value;
+            var ln=document.getElementById("last").value;
+            var mn=document.getElementById("middle").value;
+            document.getElementById("full").value=(fn+" "+mn+" "+ln);
+        }
+        function Mail(){
+            var mail=document.getElementById("email").value;
+            var pattern1=/^[a-z,A-Z,0-9][0-9,A-Z,a-z,-,.]*@[a-z]{3,6}\.[a-z]{2,3}(\.)?([a-z])?([a-z])?$/
+            if(!pattern1.test(mail))
+            {
+                document.getElementById("errorMAIL").style.visibility="visible";
+                return false;
+            }
+            else if(mail==""){
+                document.getElementById("errorMAIL").style.visibility="visible";
+                return false;
+            }
+            else{
+                document.getElementById("errorMAIL").style.visibility="hidden";
+                return true;
+            }
+        }
+        function Password(){
+            var p = document.getElementById("ps").value;
+            if(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(p)){
+                document.getElementById("errorPASS").style.visibility="hidden";
+                return true;
+            }
+            else if(p==""){
+                document.getElementById("errorPASS").style.visibility="visible";
+                return false;
+            }
+            else{
+        //alert("No No Plz Enter Valid one")
+                document.getElementById("errorPASS").style.visibility="visible";
+                return false;
+            }
+        }
+        function sp(){
+            var s1=document.getElementById("s").checked;
+            if(s1)
+            {
+                document.getElementById("ps").type="text";
+            }
+            else{
+                document.getElementById("ps").type="password";
+            }
+        }
+        function Mobile(){
+            var x = document.getElementById("country").value;
+            if(x=='Ind'){
+                var phoneno = /^\d{10}$/;
+                if((document.getElementById("call").value.match(phoneno)))
+                {
+                    document.getElementById("errorPH").style.visibility="hidden";
+                    document.getElementById("call").style.border="1px solid";
+                    // alert("HI veera");
+
+                    return true;
+                }
+                else
+                {
+                    document.getElementById("errorPH").style.visibility="visible";
+                    document.getElementById("call").style.border="1px solid red";
+                    return false;
+                }
+            }
+            else if(x=="USA"){
+                var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+                if(document.getElementById("call").value.match(phoneno))
+                {
+                    document.getElementById("errorPH").style.visibility="hidden";
+                    document.getElementById("call").style.border="1px solid";
+                    // alert("HI durga");
+
+                    return true;
+                }
+                else
+                {
+                    document.getElementById("errorPH").style.visibility="visible";
+                    document.getElementById("call").style.border="1px solid red";
+
+                    return false;
+                }
+            }   
+            else{
+                document.getElementById("errorPH").style.visibility="visible";
+                document.getElementById("call").style.border="1px solid red";
+                return false
+            }
+        }
+        function getAge() {
+            var present=new Date();
+            var actual=new Date(document.getElementById("birthday").value);
+            var s=present.getFullYear()-actual.getFullYear();
+            document.getElementById("age").value=s;
+        }
+        function Hobby(){
+            var arr=["h1","h2","h3"];
+            var checkCount=0;
+            for(let i=0;i<3;i++){
+                if(document.getElementById(arr[i]).checked){
+                    checkCount++;
+                }
+            }
+            if(checkCount<2){
+                document.getElementById("errorHB").style.visibility="visible";
+                return false;
+            }
+            else{
+                document.getElementById("errorHB").style.visibility="hidden";
+                return true;
+            }
+        }
+        
+        function reet(){
+            window.confirm("are you sure want to reset!!");
+        }
+        function confom(){
+            window.confirm("are you sure want to submit the form!");
+        }
+        function Address(){
+            var addr = document.getElementById("address").value;
+            document.getElementById("nonumaddress").value=addr.replace(/[0-9]/g, '');
+    
+             // alert(data);  
+        }
+        function Accept(){
+            var c = document.getElementById("accept").checked;
+            if(!c){
+                document.getElementById("errorA").style.visibility="visible";
+                return false;
+            }
+            else{
+                document.getElementById("errorA").style.visibility="hidden";
+                return true;
+
+            }
+        }
+    </script>
+</body>
+</html>
